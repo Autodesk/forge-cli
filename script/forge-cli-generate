@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+'use strict';
+
+const resourcesFile = require('../modules/constants').resourcesYml;
+const generateTemplate = require('../modules/generate');
+const program = require('commander');
+
+program.description('Create a resources template');
+
+generateTemplate('forge-resources-template.yml', resourcesFile);
+

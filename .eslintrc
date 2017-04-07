@@ -1,0 +1,3 @@
+{
+  "extends": "@adsk/eslint-config-autodesk"
+}

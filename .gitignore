@@ -1,0 +1,10 @@
+node_modules/
+.idea
+npm-debug.log
+#add generated files so they are not inadvertently commited while testing
+credentials.json
+forge-resources.yml
+
+dist
+tsconfig.json
+coverage

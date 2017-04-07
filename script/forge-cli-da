@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+'use strict';
+
+const program = require('commander');
+const activities = require('../modules/da/activities');
+const auth = require('../modules/auth');
+
+program.description('Design Automation API commands')
+  .option('-l, --list <type>', `List the DA resources available in the Forge app according the specified type [activities]`)
+
+program.parse(process.argv);
+
+if (program.list) {
+  switch (program.list) {
+    case 'activities':
+      console.log('Available activities:');
+      auth.getAuthHeader()
+        .then(header => activities.list(header))
+        .then(activities => {
+          activities.value.forEach(activity => {
+            console.log('- ' + activity.Id);
+          });
+        });
+      break;
+    default:
+      console.log(`Type ${program.list} isn't supported`);
+  }
+}

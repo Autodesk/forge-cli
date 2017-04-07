@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+'use strict';
+
+const prompt = require('prompt');
+const appRootPath = require('app-root-path');
+const writeJSONDataToFile = require('../modules/writeJSONDataToFile');
+const auth = require('../modules/auth');
+const program = require('commander');
+
+program.description('Set up User ID and Secret')
+  .option('-p, --profile [value]', 'Optional profile name')
+  .option('-i, --id [value]', 'Optional Client ID')
+  .option('-s, --secret [value]', 'Optional Client Secret');
+
+program.parse(process.argv);
+
+// Set up prompt
+prompt.colors = false;
+prompt.delimiter = "";
+prompt.message = "";
+
+const schema = {
+  properties: {}
+};
+
+prompt.start();
+
+// If Client ID or Secret were not given as arguments, ask for them using prompt
+if (!program.id) {
+  schema.properties.clientId = { description: 'Client ID: ' };
+}
+
+if (!program.secret) {
+  schema.properties.secret = { description: 'Client Secret: ' };
+}
+
+prompt.get(schema, (err, result) => {
+  if (err) {
+    const promptError = new Error('Could not get credentials: ' + err);
+    console.error(promptError.message);
+    return promptError;
+  }
+
+  const clientId = program.id || result.clientId;
+  const secret = program.secret || result.secret;
+  const profile = program.profile || 'default';
+
+  auth.verifyCredentials(clientId, secret)
+    .then((res) => {
+      const text = JSON.parse(res);
+
+      if (text.errorCode === 'AUTH-001' || text.errorCode === 'AUTH-002') {
+        console.log('Invalid Client ID or Client Secret.');
+        return;
+      } else if (text.developerMessage) {
+        console.log('Forge API error: ' + text.developerMessage);
+        return;
+      }
+
+      const credentialsObj = {};
+      credentialsObj[profile] = {
+        forge_client_id: clientId,
+        forge_secret: secret
+      };
+
+      writeJSONDataToFile(credentialsObj, appRootPath.toString(), 'credentials.json', 'Credentials have been updated successfully');
+
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+});
+

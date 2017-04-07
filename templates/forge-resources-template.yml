@@ -1,0 +1,39 @@
+# Sample forge-cli resources file
+# Format
+#DesignAutomationAPI:
+#  Resources:
+#    Activities:
+#    # your activity id
+#    - drawLine:
+#        # ActivityID, if specified, will set the id. Otherwise the activity key (for this example, drawLine), will be used
+#        ActivityId: string
+#        # in what version of the engine this activity must run. NOTE: we only suppor accoreconsole engine. default 21.0 (AutoCAD 2017)
+#        RequiredEngineVersion: string
+#        # Input and output params.
+#        Parameters:
+#          InputParameters:
+#          # leave this as is if you are operating only on a dwg file. defaults to specified values
+#          - Name: HostDwg
+#            LocalFileName: $(HostDwg)
+#          OutputParameters:
+#          # REQUIRED this will reference the dwg or other file saved by your instruction
+#          - Name: Result
+#            LocalFileName: string
+#        Instruction:
+#          # extra params to pass to command line. Empty by default
+#          CommandLineParameters: string
+#          # REQUIRED AutoCAD script (command, lisp script) to be executed by this activity
+#          Script: string
+# Basic Example
+DesignAutomationAPI:
+  Resources:
+    Activities:
+    - helloLine:
+        Parameters:
+          OutputParameters:
+          - Name: helloLine
+            LocalFileName: helloLine.dwg
+        Instruction:
+          Script: >-
+            _line 0,0 10,10
+            _save helloLine.dwg

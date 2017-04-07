@@ -1,0 +1,38 @@
+{
+  "name": "adsk-forge-cli",
+  "version": "1.0.0",
+  "description": "Interact with Forge API from the command line.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && mocha modules/**/**/*-test.js",
+    "commit": "es-feds commit",
+    "lint": "eslint modules/**/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Autodesk/forge-cli.git"
+  },
+  "author": "Martin Alonso <martin.alonso@autodesk.com>",
+  "license": "Apache-2.0",
+  "bin": {
+    "forge-cli": "./script/forge-cli"
+  },
+  "devDependencies": {
+    "@adsk/es-feds": "^12.1.0",
+    "@adsk/eslint-config-autodesk": "^3.0.0",
+    "eslint": "^3.5.0",
+    "fetch-mock": "^5.1.2",
+    "mocha": "^3.0.2",
+    "sinon": "^1.17.5",
+    "test-console": "^1.0.0"
+  },
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "commander": "^2.9.0",
+    "debug": "^2.2.0",
+    "jsonschema": "^1.1.0",
+    "node-fetch": "^1.6.1",
+    "prompt": "^1.0.0",
+    "yamljs": "^0.2.8"
+  }
+}
