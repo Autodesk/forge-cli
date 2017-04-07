@@ -21,6 +21,7 @@ add a new module, refactor out all usages of the old module
 
 #### tests
 - test files next to sources, name <sourcefile>-test.js
+- run tests using `npm run test`
 
 #### Github
 
