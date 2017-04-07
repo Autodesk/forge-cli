@@ -4,18 +4,18 @@ Using Forge CLI you can create, update, query and delete resources in your Forge
 Use Forge CLI to automate the build and deploy process of Forge depended services.
 
 ## Contributing guidelines
-See [CONTRIBUTING](https://git.autodesk.com/AutoCAD360/forge-cli/blob/master/CONTRIBUTING.md)
+See [CONTRIBUTING](./CONTRIBUTING.md)
 
 ## Usage
 
 | Step | Command                                                                  | Description                                                                                                                                |
 | ---- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1    | `npm login --registry="http://npm.web-platform.io:8080" --scope="@adsk"` | Login to npm                                                                                                                               |
-| 2    | `mkdir my-forge-da-app && cd my-forge-da-app`                            | Create the project directory                                                                                                               |
-| 3    | `npm install @adsk/forge-cli`                                            | Install Forge CLI                                                                                                                          |
-| 4    | [Create a Forge app](https://developer-dev.autodesk.com/myapps/create)   | Get Forge app id and secret                                                                                                                |
+| 1    | `mkdir my-forge-da-app && cd my-forge-da-app` | Create the project directory                                                                                                                             |
+| 2    | `npm init`                            | Initialize npn in your directory                                                                                                              |
+| 3    | `npm install adsk-forge-cli`                                            | Install Forge CLI                                                                                                                          |
+| 4    | [Create a Forge app](https://developer.autodesk.com/myapps/create)   | Get Forge app id and secret                                                                                                                |
 | 5    | `node_modules/.bin/forge-cli configure -i [FORGE_ID] -s [FORGE_SECRET]`  | Connect Forge CLI with your Forge app                                                                                                      |
-| 6    | `node_modules/.bin/forge-cli generate`                                   | Generate a [Forge resources sample yaml](https://git.autodesk.com/AutoCAD360/forge-cli/blob/master/templates/forge-resources-template.yml) |
+| 6    | `node_modules/.bin/forge-cli generate`                                   | Generate a [Forge resources sample yaml](./templates/forge-resources-template.yml) |
 | 7    | `node_modules/.bin/forge-cli deploy`                                     | Deploy resources to Forge                                                                                                                  |
 
 ## Commands

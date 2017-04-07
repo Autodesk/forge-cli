@@ -21,9 +21,9 @@ add a new module, refactor out all usages of the old module
 
 #### tests
 - test files next to sources, name <sourcefile>-test.js
+- run tests using `npm run test`
 
 #### Github
 
 - All code contributions must be submitted via a pull request.
-- Commit messages must follow the [AngularJS Commit Message Conventions](https://git.autodesk.com/AutoCAD360/es-feds/tree/master/modules/validate-commit-msg)
-Run `npm run commit` to follow this convention
+- Commit messages must follow the [AngularJS Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/)

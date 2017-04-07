@@ -1,11 +1,10 @@
 {
   "name": "adsk-forge-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Interact with Forge API from the command line.",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && mocha modules/**/**/*-test.js",
-    "commit": "es-feds commit",
     "lint": "eslint modules/**/**/*.js"
   },
   "repository": {
@@ -18,8 +17,7 @@
     "forge-cli": "./script/forge-cli"
   },
   "devDependencies": {
-    "@adsk/es-feds": "^12.1.0",
-    "@adsk/eslint-config-autodesk": "^3.0.0",
+    "chai": "^3.5.0",
     "eslint": "^3.5.0",
     "fetch-mock": "^5.1.2",
     "mocha": "^3.0.2",
