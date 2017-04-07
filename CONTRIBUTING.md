@@ -26,5 +26,5 @@ add a new module, refactor out all usages of the old module
 #### Github
 
 - All code contributions must be submitted via a pull request.
-- Commit messages must follow the [AngularJS Commit Message Conventions](https://git.autodesk.com/AutoCAD360/es-feds/tree/master/modules/validate-commit-msg)
+- Commit messages must follow the [AngularJS Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/)
 Run `npm run commit` to follow this convention
