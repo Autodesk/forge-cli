@@ -5,7 +5,7 @@ add a new module, refactor out all usages of the old module
 
 #### To add commands
 - forge-cli-XX files must be as small as possible and will not be tested. 
-- forge-cli-configure file is legacy and will be refactored https://jira.autodesk.com/browse/ACWB-224. DO NOT USE AS SAMPLE
+- forge-cli-configure file is legacy and will be refactored. DO NOT USE AS SAMPLE
 - the actual functionality of the command musty be implemented in the modules directory. Filename is same as command name, lower case. 
 - keep the dependency injection paradigm, never require a dependency without checking if it was passed as an arg to the function
 
