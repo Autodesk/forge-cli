@@ -1,6 +1,6 @@
 # Forge Command Line Interface (CLI)
 The Forge Command Line Interface (CLI) is a unified tool to manage your Forge services.
-Using Forge CLI you can create, update, query and delete resources in your Forge account from the command line.
+Using Forge CLI you can create, update, query and delete your Forge resources from the command line. Initially, we only support the management of Activities for the Design Automation API, we welcome pull requests for all other relevant APIs. 
 Use Forge CLI to automate the build and deploy process of Forge depended services.
 
 ## Contributing guidelines
